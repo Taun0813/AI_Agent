@@ -1,0 +1,58 @@
+ Mục tiêu chính của AI Agent:
+Hỗ trợ người dùng mua sắm thông minh hơn.
+
+Tăng tỷ lệ chuyển đổi.
+
+Tự động hóa hỗ trợ khách hàng.
+
+Tối ưu trải nghiệm cá nhân hóa.
+
+Xác định tác vụ chính:
+Tác vụ	                Mô tả
+Tư vấn sản phẩm	        Gợi ý sản phẩm phù hợp dựa trên nhu cầu, ngân sách, sở thích.
+Hỏi đáp tự nhiên	Trả lời các câu hỏi về giá cả, chính sách vận chuyển, tồn kho,...
+So sánh sản phẩm	Đưa ra bảng so sánh chi tiết các sản phẩm.
+Theo dõi đơn hàng	Hỏi trạng thái đơn hàng, đổi/trả hàng,...
+Giao tiếp đa kênh	Tích hợp chat trên website, app, Zalo, Facebook,...
+
+Dữ liệu đầu vào:
+Câu hỏi tự nhiên từ người dùng (dạng text hoặc voice).
+
+Dữ liệu hành vi người dùng (click, search, history).
+
+Danh sách sản phẩm từ database/shop (catalog).
+
+Feedback, reviews.
+
+Dữ liệu đầu ra:
+Kết quả gợi ý sản phẩm.
+
+Câu trả lời tự nhiên.
+
+Các hành động như “thêm vào giỏ hàng”, “so sánh”, “mở chat với nhân viên thật”...
+
+Luồng xử lý cơ bản:
+Người dùng nhập yêu cầu →
+
+AI Agent xử lý ngôn ngữ (NLU/NLP) →
+
+Trích xuất ý định + thực thể →
+
+Gọi các API (product search, order, etc) →
+
+Sinh câu trả lời & phản hồi →
+
+Hiển thị cho người dùng.
+
+Hạ tầng:
+Frontend: React / Next.js / Vue (tích hợp chatbot UI).
+
+Backend: Python (FastAPI, Flask) hoặc Node.js.
+
+Vector DB: FAISS / Weaviate / Pinecone (cho RAG).
+
+Product DB: PostgreSQL, MongoDB.
+Tích hợp:
+eCommerce API: Shopify, WooCommerce, Magento,...
+
+Giao tiếp người dùng: Webchat, Messenger, Zalo OA, WhatsApp,...
