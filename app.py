@@ -46,3 +46,4 @@ async def chat_endpoint(req: ChatRequest):
         "top_products": top_products,  
         "response": response
     }
+
