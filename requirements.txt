@@ -8,3 +8,5 @@ transformers
 torch
 faiss-cpu
 python-dotenv
+peft
+datasets

@@ -15,21 +15,23 @@ embedder = Embedder()
 retriever = ProductRetriever(
     index_path="vectorstore/index.faiss",
     embedding_path="vectorstore/embeddings.npy",
-    data_path="data/processed.json"  # hoặc dataset.json nếu bạn không tạo file xử lý
+    data_path="data/processed.json"
 )
+
 
 class ChatRequest(BaseModel):
     query: str
     max_new_tokens: int = 128
     temperature: float = 0.7
 
+
 @app.post("/chat")
 async def chat_endpoint(req: ChatRequest):
     # Bước 1: Vector hóa truy vấn người dùng
     query_vector = embedder.encode([req.query]).astype("float32")
 
-    # Bước 2: Tìm sản phẩm gần nhất
-    top_products = retriever.search(query_vector)
+    # Bước 2: Tìm sản phẩm gần nhất, có lọc theo query
+    top_products = retriever.search(query_vector, user_query=req.query, top_k=10)
 
     # Bước 3: Tạo prompt đầu vào LLM
     prompt = generate_prompt(req.query, top_products)
@@ -43,7 +45,6 @@ async def chat_endpoint(req: ChatRequest):
 
     return {
         "query": req.query,
-        "top_products": top_products,  
+        "top_products": top_products,
         "response": response
     }
-

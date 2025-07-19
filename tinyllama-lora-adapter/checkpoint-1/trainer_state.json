@@ -11,9 +11,9 @@
   "log_history": [
     {
       "epoch": 1.0,
-      "grad_norm": 42.71070861816406,
-      "learning_rate": 0.0002,
-      "loss": 14.5625,
+      "grad_norm": 37.8748779296875,
+      "learning_rate": 0.0003,
+      "loss": 12.1795,
       "step": 1
     }
   ],
@@ -34,8 +34,8 @@
       "attributes": {}
     }
   },
-  "total_flos": 1590741172224.0,
-  "train_batch_size": 1,
+  "total_flos": 15907411722240.0,
+  "train_batch_size": 2,
   "trial_name": null,
   "trial_params": null
 }
